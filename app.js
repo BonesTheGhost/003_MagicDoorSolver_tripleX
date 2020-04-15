@@ -43,15 +43,19 @@ function generateCodes(factors) {
   let secondFactor = factors;
   let thirdFactor = factors;
 
+  a = 0
+  b = 0
+  c = 0
+
   let factorSum = 0;
 
   while(foundValue == false) {
 
-    for( a = 0; a < firstFactor.length - 1 ; a++){
+    for( a; a < firstFactor.length - 1 ; a++){
 
-      for( b = 0; b < secondFactor.length - 1 ; b++){
+      for( b; b < secondFactor.length - 1 ; b++){
       
-        for( c = 0; c < thirdFactor.length - 1 ; c++){
+        for( c; c < thirdFactor.length - 1 ; c++){
           
           factorSum = firstFactor[a]+secondFactor[b]+thirdFactor[c];
           console.log(`[ADDING]:: ${firstFactor[a]} + ${secondFactor[b]} + ${thirdFactor[c]}`)
@@ -66,6 +70,9 @@ function generateCodes(factors) {
             console.log("[Product Success]: " + firstFactor + " :: " + secondFactor + " :: " + thirdFactor);
 
             FoundValue = true;
+            a = firstFactor.length + 1;
+            b = secondFactor.length + 1;
+            c = thirdFactor.length + 1;
           }
 
         }
